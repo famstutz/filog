@@ -8,9 +8,11 @@ namespace filog.Desktop
 	public partial class ViewController : NSViewController
 	{
 		private int numberOfTimesClicked = 0;
+		private FlightDiary diary;
 
 		public ViewController (IntPtr handle) : base (handle)
 		{
+			this.diary = new FlightDiary ();
 		}
 
 		public override void ViewDidLoad ()
@@ -36,8 +38,10 @@ namespace filog.Desktop
 
 			ClickedLabel.StringValue = String.Format("The button has been clicked {0} time{1}.", 
 				this.numberOfTimesClicked, 
-				(thisnumberOfTimesClicked < 2) ? "" : "s"
+				(this.numberOfTimesClicked < 2) ? "" : "s"
 			);
+
+			this.diary.LoadBa97Csv("");
 		}
 	}
 }
