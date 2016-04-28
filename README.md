@@ -2,4 +2,4 @@
 A flight logging application.
 
 # Build status
-https://travis-ci.org/famstutz/filog.svg?branch=master
+![Travis CI Status](https://travis-ci.org/famstutz/filog.svg?branch=master)
