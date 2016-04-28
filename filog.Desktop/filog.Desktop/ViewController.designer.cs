@@ -13,7 +13,37 @@ namespace filog.Desktop
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSTableColumn AircraftColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn AirlineColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn CabinColumn { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField ClickedLabel { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn DateColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn DistanceColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn FlightNumberColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn FromColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn SeatColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableView SectorsTable { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn ToColumn { get; set; }
 
 		[Action ("ClickedButton:")]
 		partial void ClickedButton (Foundation.NSObject sender);
@@ -23,6 +53,56 @@ namespace filog.Desktop
 			if (ClickedLabel != null) {
 				ClickedLabel.Dispose ();
 				ClickedLabel = null;
+			}
+
+			if (SectorsTable != null) {
+				SectorsTable.Dispose ();
+				SectorsTable = null;
+			}
+
+			if (AirlineColumn != null) {
+				AirlineColumn.Dispose ();
+				AirlineColumn = null;
+			}
+
+			if (FlightNumberColumn != null) {
+				FlightNumberColumn.Dispose ();
+				FlightNumberColumn = null;
+			}
+
+			if (DateColumn != null) {
+				DateColumn.Dispose ();
+				DateColumn = null;
+			}
+
+			if (FromColumn != null) {
+				FromColumn.Dispose ();
+				FromColumn = null;
+			}
+
+			if (ToColumn != null) {
+				ToColumn.Dispose ();
+				ToColumn = null;
+			}
+
+			if (DistanceColumn != null) {
+				DistanceColumn.Dispose ();
+				DistanceColumn = null;
+			}
+
+			if (CabinColumn != null) {
+				CabinColumn.Dispose ();
+				CabinColumn = null;
+			}
+
+			if (SeatColumn != null) {
+				SeatColumn.Dispose ();
+				SeatColumn = null;
+			}
+
+			if (AircraftColumn != null) {
+				AircraftColumn.Dispose ();
+				AircraftColumn = null;
 			}
 		}
 	}

@@ -79,14 +79,17 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="FlightDiary.cs" />
     <Compile Include="Sector.cs" />
+    <Compile Include="SectorsTableDelegate.cs" />
+    <Compile Include="FlightDiaryDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="Resources\FlightDiary.db" />
+    <BundleResource Include="Resources\FlightDiary.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
 </Project>

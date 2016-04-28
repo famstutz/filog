@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using AppKit;
 using Foundation;
@@ -8,11 +9,10 @@ namespace filog.Desktop
 	public partial class ViewController : NSViewController
 	{
 		private int numberOfTimesClicked = 0;
-		private FlightDiary diary;
 
 		public ViewController (IntPtr handle) : base (handle)
 		{
-			this.diary = new FlightDiary ();
+			
 		}
 
 		public override void ViewDidLoad ()
@@ -21,6 +21,16 @@ namespace filog.Desktop
 
 			// Do any additional setup after loading the view.
 			ClickedLabel.StringValue = "Button has not been clicked yet.";
+		}
+
+		public override void AwakeFromNib()
+		{
+			base.AwakeFromNib();
+
+
+			var dataSource = new FlightDiaryDataSource();
+			SectorsTable.DataSource = dataSource;
+			SectorsTable.Delegate = new SectorsTableDelegate(dataSource);
 		}
 
 		public override NSObject RepresentedObject {
@@ -41,7 +51,6 @@ namespace filog.Desktop
 				(this.numberOfTimesClicked < 2) ? "" : "s"
 			);
 
-			this.diary.LoadBa97Csv("");
 		}
 	}
 }
